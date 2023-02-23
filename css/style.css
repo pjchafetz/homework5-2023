@@ -1,0 +1,156 @@
+/* 1. */
+@keyframes logo {
+    0% {
+        width: 25px;
+        opacity: 0;
+    }
+
+    100% {
+        width: 475px;
+        opacity: 1;
+    }
+}
+
+#logo {
+    animation: logo 5s;
+}
+
+/* 2. */
+body {
+    font-family: 'Poppins';
+    background-image: url('../images/concrete_seamless.png');
+    background-color: #f1f1f1;
+}
+
+/* 3. */
+header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* 4. */
+.nav_links {
+    display: flex;
+    flex-direction: column;
+}
+
+/* 5. */
+.nav_links a, .nav_links a:visited {
+    color: blue; 
+    /* inherit is better as it uses starter.css, but the solution images use blue */
+}
+
+/* 6. */
+.card > header {
+    background-color: #288088;
+    border: 2px solid #45ADAD;
+    padding: 20px 0;
+    border-radius: 50px 50px 0 0;
+}
+
+/* 7. */
+.card {
+    border-radius: 50px 50px 0 0;
+    flex-basis: 450px;
+}
+
+/* 8. */
+.pricing {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+/* 9. */
+.gallery img {
+    border: 10px solid #50C7C7;
+    margin: 10px;
+    width: 300px;
+}
+
+/* 10. */
+.gallery {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: center;
+}
+
+@media screen and (min-width: 900px) {
+    /* 11. */
+    header, .nav_links, .pricing header {
+        flex-direction: row;
+    }
+
+    #logo {
+        align-self: flex-start;
+    }
+
+    /* 12. */
+    .pricing {
+        flex-wrap: nowrap;
+    }
+
+    .card {
+        flex-basis: 275px;
+    }
+
+    /* 13. */
+    .skip + header {
+        top: 0;
+        position: sticky;
+        justify-content: space-between;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    /* 14. */
+    #logo {
+        animation: none;
+    }
+}
+
+@media print {
+    /* 15, 16. */
+    body {
+        font-family: Arial, Helvetica;
+        background-image: none;
+    }
+
+    /* 17. */
+    .nav_links {
+        flex-direction: row;
+        justify-content: space-evenly;
+    }
+
+    .nav_links li {
+        margin: 0 80px;
+        /* chosen to match sample image */
+    }
+
+    /* 18. */
+    .pricing {
+        flex-wrap: nowrap;
+        flex-direction: row;
+        align-items: flex-end;
+    }
+
+    /* 19. */
+    .card {
+        border: 2px solid #45ADDD;
+        flex-basis: 325px;
+    }
+
+    /* 20. */
+    #gallery, .gallery {
+        display: none;
+    }
+
+    /* 21. */
+    .card > ul li:nth-child(2)::after {
+        content: "👍";
+    }
+}
